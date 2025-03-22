@@ -1,10 +1,13 @@
 <?php
 // Conectar ao banco de dados SQLite
-$database = __DIR__ . '/database/agendu.sqlite';
+$database = __DIR__ . '/../database/agendu.sqlite';
 
 try {
     $pdo = new PDO("sqlite:$database");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Habilitar chaves estrangeiras (se necessário no futuro)
+    $pdo->exec("PRAGMA foreign_keys = ON");
 
     // Criar tabela usuarios
     $pdo->exec("

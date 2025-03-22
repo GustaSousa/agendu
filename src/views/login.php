@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require_once(__DIR__ . '/../config/config.php');
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["user_id"] = $user["id"];
             $_SESSION["username"] = $user["username"];
             $_SESSION["is_admin"] = $user["is_admin"];
-            echo "Login bem-sucedido! <a href='schedule.php'>Ir para Agendamentos</a>";
+            echo "Login bem-sucedido! <a href='home.php'>Ir para home</a>";
         } else {
             echo "Usuário ou senha inválidos!";
         }

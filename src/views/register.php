@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require_once(__DIR__ . '/../config/config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
@@ -23,6 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="email" name="email" placeholder="Email" required>
     <input type="password" name="password" placeholder="Senha" required>
     <input type="text" name="department" placeholder="Setor" required>
-    <label><input type="checkbox" name="is_admin"> Admin?</label>
+    <label><input type="checkbox" name="is_admin">Adiministrador</label>
     <button type="submit">Cadastrar</button>
 </form>

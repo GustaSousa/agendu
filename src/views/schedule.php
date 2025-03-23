@@ -27,16 +27,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos</title>
+    <link rel="stylesheet" href="/public/assets/css/forms.css">
+</head>
+<body>
 <form method="POST">
-    <input type="text" name="room_type" placeholder="Tipo de Ambiente (Sala, Auditório)" required>
-    <input type="text" name="room_name" placeholder="Nome do Local" required>
-    <input type="text" name="activity" placeholder="Atividade" required>
-    <input type="date" name="date" required>
-    <input type="time" name="start_time" required>
-    <input type="time" name="end_time" required>
-    <input type="number" name="participants_count" placeholder="Número de Participantes" required>
-    <input type="text" name="contact_info" placeholder="Contato" required>
-    <input type="text" name="av_requirements" placeholder="Necessidades Audiovisuais (Câmera, Microfone...)" required>
-    <button type="submit">Agendar</button>
+        <input type="text" name="room_type" placeholder="Tipo de Ambiente (Sala, Auditório)" required>
+        <input type="text" name="room_name" placeholder="Nome do Local" required>
+        <input type="text" name="activity" placeholder="Atividade" required>
+        <input type="date" name="date" required>
+        <input type="time" name="start_time" required>
+        <input type="time" name="end_time" required>
+        <input type="number" name="participants_count" placeholder="Número de Participantes" required>
+        <input type="text" name="contact_info" placeholder="Contato" required>
+        <input type="text" name="av_requirements" placeholder="Necessidades Audiovisuais (Câmera, Microfone...)" required>
+        <button type="submit">Agendar</button>
 </form>
+</body>
+</html>

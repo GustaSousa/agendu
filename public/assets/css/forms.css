@@ -1,0 +1,29 @@
+/* Importando a fonte escolhida */
+@import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+
+/* Paleta de cores */
+:root{
+    --english-holly: #043414;
+    --gin: #E0ECE6;
+    --spanish-green:#849484;
+}
+
+/* Reset de margin e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Zain';
+  }
+
+  body{
+    background-color: var(--english-holly);
+  }
+
+  h1,h2,h3,p,a{
+    color: var(--gin);
+  }
+
+  h1{
+    font-weight:bold;
+  }

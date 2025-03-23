@@ -57,16 +57,26 @@ try {
 }
 ?>
 
-<h1>Editar Agendamento</h1>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Agendamento</title>
+    <link rel="stylesheet" href="/public/assets/css/forms.css">
+</head>
+<body>
+    <h1>Editar Agendamento</h1>
 
-<form method="POST">
-    <input type="text" name="room_type" value="<?php echo htmlspecialchars($agendamento['room_type']); ?>" required>
-    <input type="text" name="room_name" value="<?php echo htmlspecialchars($agendamento['room_name']); ?>" required>
-    <input type="text" name="activity" value="<?php echo htmlspecialchars($agendamento['activity']); ?>" required>
-    <input type="date" name="date" value="<?php echo htmlspecialchars($agendamento['date']); ?>" required>
-    <input type="time" name="start_time" value="<?php echo htmlspecialchars($agendamento['start_time']); ?>" required>
-    <input type="time" name="end_time" value="<?php echo htmlspecialchars($agendamento['end_time']); ?>" required>
-    <input type="text" name="responsible_person" value="<?php echo htmlspecialchars($agendamento['responsible_person']); ?>" required>
-    <input type="text" name="contact_info" value="<?php echo htmlspecialchars($agendamento['contact_info']); ?>" required>
-    <button type="submit">Salvar alterações</button>
-</form>
+    <form method="POST">
+        <input type="text" name="room_type" value="<?php echo htmlspecialchars($agendamento['room_type']); ?>" required>
+        <input type="text" name="room_name" value="<?php echo htmlspecialchars($agendamento['room_name']); ?>" required>
+        <input type="text" name="activity" value="<?php echo htmlspecialchars($agendamento['activity']); ?>" required>
+        <input type="date" name="date" value="<?php echo htmlspecialchars($agendamento['date']); ?>" required>
+        <input type="time" name="start_time" value="<?php echo htmlspecialchars($agendamento['start_time']); ?>" required>
+        <input type="time" name="end_time" value="<?php echo htmlspecialchars($agendamento['end_time']); ?>" required>
+        <input type="text" name="responsible_person" value="<?php echo htmlspecialchars($agendamento['responsible_person']); ?>" required>
+        <input type="text" name="contact_info" value="<?php echo htmlspecialchars($agendamento['contact_info']); ?>" required>
+        <button type="submit">Salvar alterações</button>
+    </form>
+</body>
+</html>

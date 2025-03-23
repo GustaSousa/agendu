@@ -1,1 +1,2 @@
-<?php phpinfo(); ?>
+<?php
+header("Location: /public/index.php"); ?>

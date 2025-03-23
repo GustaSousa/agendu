@@ -1,22 +1,25 @@
 <?php
-// Incluindo a configuração do banco de dados
-require_once('../src/config/config.php');
+session_start(); // Inicia a sessão antes de qualquer saída
 
-// Roteamento básico para determinar qual página carregar
-$page = $_GET['page'] ?? 'home'; // Se não tiver página, redireciona para 'home'
-
-switch ($page) {
-    case 'login':
-        include_once('../src/views/login.php');
-        break;
-    case 'register':
-        include_once('../src/views/register.php');
-        break;
-    case 'schedule':
-        include_once('../src/views/schedule.php');
-        break;
-    default:
-        include_once('../src/views/home.php');
-        break;
+// Se o usuário já estiver logado, redireciona para o dashboard
+if (isset($_SESSION["user_id"])) {
+    header("Location: /src/views/dashboard.php");
+    exit(); // Importante: finaliza o script após o redirecionamento
 }
+
+require_once(__DIR__ . '/../src/config/config.php'); // Inclui apenas depois da verificação
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendu - Home</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <h1>Agendu</h1>
+    <p><a href="/src/views/login.php">Login</a></p>
+    <p><a href="/src/views/register.php">Registrar Novo Usuário</a></p>
+</body>
+</html>

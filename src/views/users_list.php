@@ -15,31 +15,41 @@ try {
     die("Erro ao obter usuários: " . $e->getMessage());
 }
 ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+    <link rel="stylesheet" href="/public/assets/css/lists.css">
+</head>
+<body>
+    <h1>Usuários</h1>
 
-<h1>Gerenciar Usuários</h1>
-
-<table>
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Setor</th>
-            <th>Administrador</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($usuarios as $usuario): ?>
+    <table>
+        <thead>
             <tr>
-                <td><?php echo htmlspecialchars($usuario['username']); ?></td>
-                <td><?php echo htmlspecialchars($usuario['email']); ?></td>
-                <td><?php echo htmlspecialchars($usuario['department']); ?></td>
-                <td><?php echo $usuario['is_admin'] ? 'Sim' : 'Não'; ?></td>
-                <td>
-                    <a href="edit_user.php?id=<?php echo $usuario['id']; ?>">Editar</a>
-                    <a href="delet_user.php?id=<?php echo $usuario['id']; ?>">Excluir</a>
-                </td>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Setor</th>
+                <th>Administrador</th>
+                <th>Ações</th>
             </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <?php foreach ($usuarios as $usuario): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($usuario['username']); ?></td>
+                    <td><?php echo htmlspecialchars($usuario['email']); ?></td>
+                    <td><?php echo htmlspecialchars($usuario['department']); ?></td>
+                    <td><?php echo $usuario['is_admin'] ? 'Sim' : 'Não'; ?></td>
+                    <td>
+                        <a href="edit_user.php?id=<?php echo $usuario['id']; ?>">Editar</a>
+                        <a href="delet_user.php?id=<?php echo $usuario['id']; ?>">Excluir</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</body>
+</html>

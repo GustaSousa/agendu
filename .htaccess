@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Remove .php da URL e redireciona para a versão sem .php
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9} \ /([^.\ ]+)\.php
+RewriteRule ^([^.\ ]+)\.php$ /%1 [R=301,L]
+
+# Permite acessar arquivos .php sem precisar digitar a extensão
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^.\ ]+)$ $1.php [L]

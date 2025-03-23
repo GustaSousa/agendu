@@ -16,7 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["user_id"] = $user["id"];
             $_SESSION["username"] = $user["username"];
             $_SESSION["is_admin"] = $user["is_admin"];
-            echo "Login bem-sucedido! <a href='home.php'>Ir para home</a>";
+            echo "Login bem-sucedido!";
+            header("Location: dashboard.php");
         } else {
             echo "Usuário ou senha inválidos!";
         }
@@ -25,9 +26,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-<form method="POST">
-    <input type="text" name="login" placeholder="Email ou Username" required>
-    <input type="password" name="password" placeholder="Senha" required>
-    <button type="submit">Entrar</button>
-</form>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/assets/css/style.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST">
+        <input type="text" name="login" placeholder="Email ou Username" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+</body>
+</html>

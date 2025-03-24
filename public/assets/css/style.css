@@ -51,6 +51,10 @@ h1 {
   .index {
     flex-direction: column;
   }
+
+  .index a{
+    min-width: 210px;
+  }
   
   body {
   background-color: var(--english-holly);
@@ -101,13 +105,13 @@ a:hover {
 
 @media (max-width: 768px) {
   ul {
-      flex-direction: column; /* Organiza os itens verticalmente em telas menores */
+      flex-direction: column !important; /* Organiza os itens verticalmente em telas menores */
       width: 90%; /* Limita a largura da lista */
       margin: 0 auto; /* Centraliza a lista */
   }
 
   a {
-      min-width: 150px; /* Largura mínima ajustada para os links */
+      min-width: 250px; /* Largura mínima ajustada para os links */
       font-size: 1.5rem; /* Ajusta o tamanho da fonte */
       padding: 8px 16px; /* Ajusta o padding para responsividade */
   }
@@ -115,12 +119,12 @@ a:hover {
 
 @media (max-width: 600px) {
   ul {
-      flex-direction: column; /* Em telas muito pequenas, organiza os itens verticalmente */
+      flex-direction: column !important; /* Em telas muito pequenas, organiza os itens verticalmente */
       width: 90%; /* Limita a largura */
       margin: 0 auto; /* Centraliza a lista */
   }
 
   a {
-      min-width: 100px; /* Ajuste do tamanho mínimo dos links */
+      min-width: 250px; 
   }
 }

@@ -18,9 +18,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare("INSERT INTO usuarios (username, email, password_hash, department, is_admin) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$username, $email, $password, $department, $is_admin]);
         echo "Usuário cadastrado com sucesso!";
-        //criar alert e enviar usuario para o index.php
+        echo "<script>
+            window.alert('Usuário cadastrado com sucesso!');
+            setTimeout(function() {
+                window.location.href = 'dashboard.php';
+            }, 0);
+        </script>";
     } catch (Exception $e) {
-        die("Erro ao cadastrar usuário: " . $e->getMessage());
+        // die("Erro ao cadastrar usuário: " . $e->getMessage());
+        //cria alert e envia usuario para o registrar novamente
+        echo "<script>
+            window.alert('Erro ao cadastrar usuário!');
+            setTimeout(function() {
+                window.location.href = 'register.php';
+            }, 0);
+        </script>";
     }
 }
 ?>

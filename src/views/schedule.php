@@ -98,16 +98,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <select id="room_name" name="room_name" required>
             <option value="">Nome do Local</option>
         </select>
-            <input type="text" name="room_name" placeholder="Nome do Local" required>
-            <input type="text" name="activity" placeholder="Atividade" required>
-            <input type="date" name="date" required>
-            <input type="time" name="start_time" required>
-            <input type="time" name="end_time" required>
-            <input type="number" name="participants_count" placeholder="Número de Participantes" required>
-            <input type="text" name="responsible_person" placeholder="Responsável" required>
-            <input type="text" name="contact_info" placeholder="Contato" required>
-            <input type="text" name="av_requirements" placeholder="Necessidades Audiovisuais (Câmera, Microfone...)" required>
-            <button type="submit">Agendar</button>
+        <input type="text" name="activity" placeholder="Atividade" list="atividades" required>
+        <input type="date" name="date" required>
+        <input type="time" name="start_time" required>
+        <input type="time" name="end_time" required>
+        <input type="number" name="participants_count" placeholder="Número de Participantes" required>
+        <input type="text" name="responsible_person" placeholder="Responsável" required>
+        <input type="text" name="contact_info" placeholder="Contato" required>
+        <input type="text" name="av_requirements" placeholder="Necessidades Audiovisuais (Câmera, Microfone...)" required>
+        <button type="submit">Agendar</button>
     </form>
 
     <script>
@@ -129,6 +128,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     roomNameSelect.appendChild(option);
                 });
             } else if (roomType == "Salas") {
+                var salas = ["MAI I", "MAI II"];
+                salas.forEach(function(sala) {
+                    var option = document.createElement("option");
+                    option.value = sala;
+                    option.textContent = sala;
+                    roomNameSelect.appendChild(option);
+                });
+
                 for (var i = 101; i <= 109; i++) { // Exemplo de salas 101 a 105
                     var option = document.createElement("option");
                     option.value = i;
@@ -174,5 +181,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     </script>
+    <datalist id="atividades">
+        <option value="Aula">Aula</option>
+        <option value="Conferencia">Conferencia</option>
+        <option value="Palestra">Palestra</option>
+        <option value="Reunião">Reunião</option>
+        <option value="Ligas">Ligas</option>
+    </datalist>
 </body>
 </html>

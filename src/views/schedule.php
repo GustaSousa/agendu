@@ -54,6 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute([$user_id, $room_type, $room_name, $activity, $date, $start_time, $end_time, $participants_count, $responsible_person, $contact_info, $av_requirements]);
         
         echo "Agendamento realizado com sucesso!";
+        //cria um alert e enviar usuario para o schedule list
+        echo "<script>
+            alert('Agendamento realizado com sucesso!');
+            setTimeout(function() {
+                window.location.href = 'schedule_list.php';
+            }, 100);
+        </script>";
+
     } catch (Exception $e) {
         die("Erro ao agendar: " . $e->getMessage());
     }
@@ -78,7 +86,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </h1>
     
     <form method="POST">
-            <input type="text" name="room_type" placeholder="Tipo de Ambiente (Sala, Auditório)" required>
+        <!-- Campo de tipo de ambiente -->
+        <select id="room_type" name="room_type" onchange="atualizarSalas()" required>
+            <option >Selecione o tipo de ambiente</option>
+            <option value="Auditórios">Auditórios</option>
+            <option value="Salas">Salas</option>
+            <option value="TICs">TICs</option>
+            <option value="Outros">Outros</option>
+        </select>
+        <!-- Campo de nome do local (sala ou auditório) -->
+        <select id="room_name" name="room_name" required>
+            <option value="">Nome do Local</option>
+        </select>
             <input type="text" name="room_name" placeholder="Nome do Local" required>
             <input type="text" name="activity" placeholder="Atividade" required>
             <input type="date" name="date" required>
@@ -90,5 +109,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="av_requirements" placeholder="Necessidades Audiovisuais (Câmera, Microfone...)" required>
             <button type="submit">Agendar</button>
     </form>
+
+    <script>
+        function atualizarSalas() {
+            var roomType = document.getElementById("room_type").value;
+            var roomNameSelect = document.getElementById("room_name");
+
+            // Limpar as opções atuais do room_name
+            roomNameSelect.innerHTML = "<option value=''>Selecione o nome do local</option>";
+
+            // Adicionar as opções válidas com base no roomType selecionado
+            if (roomType == "Auditórios") {
+                var salas = ["Ana Cardoso", "Praia", "Palmeira", "Bromélia"];
+                salas.sort(); // Ordenar as salas alfabeticamente
+                salas.forEach(function(sala) {
+                    var option = document.createElement("option");
+                    option.value = sala;
+                    option.textContent = sala;
+                    roomNameSelect.appendChild(option);
+                });
+            } else if (roomType == "Salas") {
+                for (var i = 101; i <= 109; i++) { // Exemplo de salas 101 a 105
+                    var option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = "Sala " + i;
+                    roomNameSelect.appendChild(option);
+                }
+                for (var i = 201; i <= 215; i++) { // Exemplo de salas 101 a 105
+                    var option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = "Sala " + i;
+                    roomNameSelect.appendChild(option);
+                }
+                for (var i = 301; i <= 303; i++) { // Exemplo de salas 101 a 105
+                    var option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = "Sala " + i;
+                    roomNameSelect.appendChild(option);
+                }
+            } else if (roomType == "TICs") {
+                var salas = ["Sala Betha", "Lab. Info. I", "Lab. Info. II"];
+                salas.forEach(function(sala) {
+                    var option = document.createElement("option");
+                    option.value = sala;
+                    option.textContent = sala;
+                    roomNameSelect.appendChild(option);
+                });
+            } else if (roomType == "Outros") {
+                var salas = ["Biblioteca"];
+                salas.sort(); 
+                salas.forEach(function(sala) {
+                    var option = document.createElement("option");
+                    option.value = sala;
+                    option.textContent = sala;
+                    roomNameSelect.appendChild(option);
+                });
+
+                for (var i = 1; i <= 21; i++) { 
+                    var option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = "Tutoria " + i;
+                    roomNameSelect.appendChild(option);
+                }
+            }
+        }
+    </script>
 </body>
 </html>

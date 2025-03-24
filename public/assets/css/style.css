@@ -15,22 +15,15 @@
     font-family: 'Zain';
 }
 
-body {
-    background-color: var(--english-holly);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-}
-
-h1, h2, h3, p, a {
-    color: var(--gin);
-    text-align: center;
+h1, h2, h3, p {
+  text-align: center; /* Centraliza o texto */
+  color: var(--gin);
+  width: 100%; /* Garante que o título ocupe toda a largura */
 }
 
 h1 {
     font-weight: bold;
+    font-size: 3rem;
 }
 
 .voltar {
@@ -54,50 +47,80 @@ h1 {
     background-color: var(--spanish-green);
     transform: scale(1.1);
 }
+  
+  .index {
+    flex-direction: column;
+  }
+  
+  body {
+  background-color: var(--english-holly);
+  display: flex;
+  justify-content: center; /* Garante a centralização do conteúdo */
+  align-items: flex-start; /* Alinha o conteúdo ao topo */
+  min-height: 100vh; /* Permite que o conteúdo ocupe toda a altura da tela */
+  flex-direction: column;
+  padding: 20px; /* Adiciona espaçamento ao redor */
+  }
 
 ul {
-    display: flex;
-    flex-direction: row; 
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: var(--dark-green);
-    list-style: none; /* Remove os marcadores da lista */
-    flex-wrap: wrap; /* Permite quebrar linha caso necessário */
-}
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Garante que os itens da lista sejam centralizados horizontalmente */
+  align-items: center;
+  gap: 15px;
+  padding:25px;
+  border-radius: 10px;
+  background-color: var(--dark-green);
+  list-style: none;
+  flex-wrap: wrap; /* Permite quebra de linha, se necessário */
 
-.index {
-  flex-direction: column;
+  max-width: 100%; /* Garante que a lista ocupe toda a largura disponível */
+  width: auto;
+  margin: 0 auto; 
+  margin-top: 20px; /* Espaçamento acima da lista */
 }
 
 a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--gin);
-    font-size: 15px;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    white-space: nowrap; /* Impede quebra de texto dentro do botão */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--gin);
+  font-size: 1.3em; /* Tamanho de fonte ajustado */
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap; /* Impede quebra de texto */
 }
 
 a:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  ul {
+      flex-direction: column; /* Organiza os itens verticalmente em telas menores */
+      width: 90%; /* Limita a largura da lista */
+      margin: 0 auto; /* Centraliza a lista */
+  }
+
+  a {
+      min-width: 150px; /* Largura mínima ajustada para os links */
+      font-size: 1.5rem; /* Ajusta o tamanho da fonte */
+      padding: 8px 16px; /* Ajusta o padding para responsividade */
+  }
 }
 
 @media (max-width: 600px) {
-    ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+  ul {
+      flex-direction: column; /* Em telas muito pequenas, organiza os itens verticalmente */
+      width: 90%; /* Limita a largura */
+      margin: 0 auto; /* Centraliza a lista */
+  }
 
-    a {
-        min-width: 120px;
-    }
+  a {
+      min-width: 100px; /* Ajuste do tamanho mínimo dos links */
+  }
 }

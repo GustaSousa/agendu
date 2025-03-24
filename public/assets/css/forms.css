@@ -30,18 +30,13 @@ h1, h2, h3, p, a {
 
 h1 {
     font-weight: bold;
-}
-
-.voltar {
-    align-self: flex-start;
-    margin-left: 20px;
-    transition: transform 0.2s ease-in-out;
+    font-size: 3rem;
 }
 
 .voltar {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 1.5rem;
+  left: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +45,7 @@ h1 {
 .voltar a {
   text-decoration: none;
   color: var(--gin);
-  font-size: 15px;
+  font-size: 1.3rem;
   background-color: rgba(0, 0, 0, 0.414);
   padding: 10px;
   border-radius: 10px;

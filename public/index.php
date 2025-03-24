@@ -19,7 +19,9 @@ require_once(__DIR__ . '/../src/config/config.php'); // Inclui apenas depois da 
 </head>
 <body>
     <h1>Agendu</h1>
-    <p><a href="/src/views/login.php">Login</a></p>
-    <p><a href="/src/views/register.php">Registrar Novo Usuário</a></p>
+    <ul class="index">
+        <a href="/src/views/login.php">Login</a>
+        <a href="/src/views/register.php">Registrar Novo Usuário</a>
+    </ul>
 </body>
 </html>

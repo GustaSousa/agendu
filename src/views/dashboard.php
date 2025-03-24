@@ -13,27 +13,25 @@ $is_admin = $_SESSION["is_admin"];
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" href="/public/assets/css/style.css">
 </head>
+
 <body>
     <h1>Bem-vindo, <?php echo htmlspecialchars($username); ?>!</h1>
-
     <ul>
         <!-- Links para funcionalidades disponíveis -->
-        <li><a href="schedule.php">Agendar Evento</a></li>
-        
+        <a href="schedule.php">Agendar</a>
+        <a href="schedule_list.php">Visualizar Agendamentos</a>
         <?php if ($is_admin): ?>
-            <li><a href="register.php">Registrar Usuário</a></li>
-            <li><a href="users_list.php">Gerenciar Usuários</a></li>
+            <a href="register.php">Registrar Usuário</a>
+            <a href="users_list.php">Gerenciar Usuários</a>
         <?php endif; ?>
-
-        <li><a href="schedule_list.php">Visualizar Agendamentos</a></li>
-
-        <!-- Link para logout -->
-        <li><a href="/src/logout.php">Logout</a></li>
+        <a href="/src/logout.php">Logout</a>
     </ul>
 </body>
+
 </html>

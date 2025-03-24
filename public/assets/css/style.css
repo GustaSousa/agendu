@@ -1,29 +1,103 @@
-/* Importando a fonte escolhida */
 @import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
 
-/* Paleta de cores */
-:root{
+:root {
     --english-holly: #043414;
     --gin: #E0ECE6;
-    --spanish-green:#849484;
+    --spanish-green: #849484;
+    --dark-green: #021e0b;
 }
 
-/* Reset de margin e padding */
+/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Zain';
-  }
+}
 
-  body{
+body {
     background-color: var(--english-holly);
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
 
-  h1,h2,h3,p,a{
+h1, h2, h3, p, a {
     color: var(--gin);
-  }
+    text-align: center;
+}
 
-  h1{
-    font-weight:bold;
-  }
+h1 {
+    font-weight: bold;
+}
+
+.voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.voltar a {
+    text-decoration: none;
+    color: var(--gin);
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.414);
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.voltar a:hover {
+    background-color: var(--spanish-green);
+    transform: scale(1.1);
+}
+
+ul {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--dark-green);
+    list-style: none; /* Remove os marcadores da lista */
+    flex-wrap: wrap; /* Permite quebrar linha caso necessário */
+}
+
+.index {
+  flex-direction: column;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--gin);
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap; /* Impede quebra de texto dentro do botão */
+}
+
+a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    a {
+        min-width: 120px;
+    }
+}

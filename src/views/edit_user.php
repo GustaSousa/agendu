@@ -41,13 +41,19 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuário</title>
     <link rel="stylesheet" href="/public/assets/css/forms.css">
 </head>
+
 <body>
+    <div class="voltar">
+        <a href="/src/views/users_list.php">Voltar</a>
+    </div>
+
     <h1>Editar Usuário</h1>
 
     <form method="POST">
@@ -55,8 +61,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
         <input type="text" name="username" placeholder="Username" value="<?php echo htmlspecialchars($user['username']); ?>" required>
         <input type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
         <input type="text" name="department" placeholder="Setor" value="<?php echo htmlspecialchars($user['department']); ?>" required>
-        <label><input type="checkbox" name="is_admin" <?php echo $user['is_admin'] ? 'checked' : ''; ?>> Administrador</label>
+        <label class="checkbox-label">
+            <input type="checkbox" name="is_admin"> 
+            <span>Administrador</span>
+        </label>
         <button type="submit">Atualizar</button>
     </form>
 </body>
+
 </html>

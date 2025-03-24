@@ -23,15 +23,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in</title>
     <link rel="stylesheet" href="/public/assets/css/forms.css">
 </head>
+
 <body>
+    <div class="voltar">
+        <a href="/public/index.php">Voltar</a>
+    </div>
+
+    <h1>
+        Novo Usuário
+    </h1>
+
     <form method="POST">
         <input type="text" name="username" placeholder="Username" required>
         <input type="email" name="email" placeholder="Email" required>
@@ -39,12 +50,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" name="department" placeholder="Setor" required>
 
         <?php if ($is_admin_allowed): ?>
-            <label><input type="checkbox" name="is_admin"> Administrador</label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="is_admin"> 
+                <span>Administrador</span>
+            </label>
         <?php else: ?>
             <input type="hidden" name="is_admin" value="0">
         <?php endif; ?>
 
         <button type="submit">Cadastrar</button>
-</form>
+    </form>
 </body>
+
 </html>

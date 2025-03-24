@@ -58,13 +58,19 @@ try {
 ?>
 
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Agendamento</title>
     <link rel="stylesheet" href="/public/assets/css/forms.css">
 </head>
+
 <body>
+    <div class="voltar">
+        <a href="/src/views/schedule_list.php">Voltar</a>
+    </div>
+
     <h1>Editar Agendamento</h1>
 
     <form method="POST">
@@ -79,4 +85,5 @@ try {
         <button type="submit">Salvar alterações</button>
     </form>
 </body>
+
 </html>

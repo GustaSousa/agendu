@@ -28,13 +28,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/public/assets/css/style.css">
+    <link rel="stylesheet" href="/public/assets/css/forms.css">
 </head>
+
 <body>
+    <div class="voltar">
+        <a href="/public/index.php">Voltar</a>
+    </div>
+    
     <h1>Login</h1>
     <form method="POST">
         <input type="text" name="login" placeholder="Email ou Username" required>
@@ -42,4 +48,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="submit">Entrar</button>
     </form>
 </body>
+
 </html>

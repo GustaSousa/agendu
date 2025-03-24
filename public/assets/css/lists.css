@@ -1,29 +1,124 @@
-/* Importando a fonte escolhida */
-@import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap");
 
-/* Paleta de cores */
-:root{
+:root {
     --english-holly: #043414;
-    --gin: #E0ECE6;
-    --spanish-green:#849484;
+    --gin: #e0ece6;
+    --spanish-green: #849484;
+    --dark-green: #021e0b;
+    --light-gray: #c3d1c8;
+    --red: #d9534f;
+    --blue: #5bc0de;
 }
 
-/* Reset de margin e padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Zain';
-  }
+    font-family: "Zain";
+}
 
-  body{
+body {
     background-color: var(--english-holly);
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
 
-  h1,h2,h3,p,a{
+h1 {
+    font-weight: bold;
     color: var(--gin);
-  }
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-  h1{
-    font-weight:bold;
-  }
+.voltar {
+    align-self: flex-start;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.voltar a {
+    text-decoration: none;
+    color: var(--gin);
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.414);
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.voltar a:hover {
+    background-color: var(--spanish-green);
+    transform: scale(1.1);
+}
+
+table {
+    width: 100%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    background-color: var(--dark-green);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+thead {
+    background-color: var(--spanish-green);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    color: var(--gin);
+    border-bottom: 1px solid var(--light-gray);
+}
+
+th {
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+td a {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+/* Editar */
+td a:first-child {
+    background-color: var(--blue);
+    color: white;
+}
+
+/* Excluir */
+td a:last-child {
+    background-color: var(--red);
+    color: white;
+}
+
+td a:hover {
+    opacity: 0.8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    td a {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}

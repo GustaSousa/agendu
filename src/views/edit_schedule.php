@@ -37,8 +37,10 @@ try {
         $date = trim($_POST["date"]);
         $start_time = trim($_POST["start_time"]);
         $end_time = trim($_POST["end_time"]);
+        $participants_count = trim($_POST["participants_count"]);
         $responsible_person = trim($_POST["responsible_person"]);
         $contact_info = trim($_POST["contact_info"]);
+        $av_requirements = trim($_POST["av_requirements"]);
 
         try {
             $stmt = $pdo->prepare("
@@ -74,15 +76,58 @@ try {
     <h1>Editar Agendamento</h1>
 
     <form method="POST">
-        <input type="text" name="room_type" value="<?php echo htmlspecialchars($agendamento['room_type']); ?>" required>
-        <input type="text" name="room_name" value="<?php echo htmlspecialchars($agendamento['room_name']); ?>" required>
-        <input type="text" name="activity" value="<?php echo htmlspecialchars($agendamento['activity']); ?>" required>
+        <select id="room_type" name="room_type" onchange="atualizarSalas()" required>
+            <option value="<?php echo htmlspecialchars($agendamento['room_type']); ?>"><?php echo htmlspecialchars($agendamento['room_type']); ?></option>
+            <option value="Auditórios">Auditórios</option>
+            <option value="Salas">Salas</option>
+            <option value="TICs">TICs</option>
+            <option value="Outros">Outros</option>
+        </select>
+
+        <select id="room_name" name="room_name" required>
+            <option value="<?php echo htmlspecialchars($agendamento['room_name']); ?>" disabled selected><?php echo htmlspecialchars($agendamento['room_name']); ?></option>
+        </select>
+
+        <input type="text" name="activity" value="<?php echo htmlspecialchars($agendamento['activity']); ?>" list="atividades" required>
+
+        <label for="date" class="schedule_label">Data:</label>
         <input type="date" name="date" value="<?php echo htmlspecialchars($agendamento['date']); ?>" required>
+
+        <label for="start_time" class="schedule_label">Hora do inicío:</label>
         <input type="time" name="start_time" value="<?php echo htmlspecialchars($agendamento['start_time']); ?>" required>
+
+        <label for="end_time" class="schedule_label">Hora do Término:</label>
         <input type="time" name="end_time" value="<?php echo htmlspecialchars($agendamento['end_time']); ?>" required>
+
+        <input type="number" name="participants_count" value="<?php echo htmlspecialchars($agendamento['participants_count']); ?>" required>
+
         <input type="text" name="responsible_person" value="<?php echo htmlspecialchars($agendamento['responsible_person']); ?>" required>
+
         <input type="text" name="contact_info" value="<?php echo htmlspecialchars($agendamento['contact_info']); ?>" required>
+
+        <input type="text" name="av_requeriments" value="<?php echo htmlspecialchars($agendamento['av_requeriments']); ?>" list="audiovisual" required>
+
         <button type="submit">Salvar alterações</button>
+
+        <datalist id="atividades">
+            <option value="Aula">Aula</option>
+            <option value="Conferência">Conferência</option>
+            <option value="Palestra">Palestra</option>
+            <option value="Reunião">Reunião</option>
+            <option value="Ligas">Ligas</option>
+        </datalist>
+
+        <datalist id="audiovisual">
+            <option value="Microfone">Microfone</option>
+            <option value="Sistema de Som">Sistema de Som</option>
+            <option value="Videoconferência">Videoconferência</option>
+            <option value="Computador">Computador</option>
+            <option value="Outros">Outros</option>
+        </datalist>
+
+        <script src="/public/assets/js/update_rooms.js"></script>
+        <script src="/public/assets/js/av_requeriments.js"></script>
+        <script src="/public/assets/js/fake_placeholder.js"></script>
     </form>
 </body>
 

@@ -25,6 +25,8 @@ try {
     $stmt->execute([$agendamento_id]);
 
     echo "Agendamento excluído com sucesso!";
+    echo "<script>window.location.href = 'schedule_list.php';</script>";
+
 } catch (Exception $e) {
     die("Erro ao excluir agendamento: " . $e->getMessage());
 }

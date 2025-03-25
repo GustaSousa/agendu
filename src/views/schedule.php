@@ -102,13 +102,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <input type="text" name="activity" placeholder="Atividade" list="atividades" required>
 
-        <label for="date">Data:</label>
+        <label for="date" class="schedule_label">Data:</label>
         <input type="date" name="date" class="fake-placeholder-ios" required>
 
-        <label for="start_time">Hora do inicío:</label>
+        <label for="start_time" class="schedule_label">Hora do inicío:</label>
         <input type="time" name="start_time" class="fake-placeholder-ios start-time" required>
 
-        <label for="end_time">Hora do Término:</label>
+        <label for="end_time" class="schedule_label">Hora do Término:</label>
         <input type="time" name="end_time" class="fake-placeholder-ios end-time" required>
 
         <input type="number" name="participants_count" placeholder="Número de Participantes" required>

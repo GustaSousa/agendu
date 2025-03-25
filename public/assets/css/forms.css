@@ -71,7 +71,7 @@ form {
  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-label {
+label.schedule_label {
 font-size: 1rem; /* Tamanho de texto padrão */
 color: var(--gin); /* Cor padrão (ajuste conforme necessário) */
 text-align: left; /* Alinha o texto à esquerda */

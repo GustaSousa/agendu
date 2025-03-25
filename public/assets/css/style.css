@@ -1,62 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap");
 
 :root {
-    --english-holly: #043414;
-    --gin: #E0ECE6;
-    --spanish-green: #849484;
-    --dark-green: #021e0b;
+  --english-holly: #043414;
+  --gin: #e0ece6;
+  --spanish-green: #849484;
+  --dark-green: #021e0b;
 }
 
 /* Reset de estilos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Zain';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Zain";
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   text-align: center; /* Centraliza o texto */
   color: var(--gin);
   width: 100%; /* Garante que o título ocupe toda a largura */
 }
 
 h1 {
-    font-weight: bold;
-    font-size: 3rem;
+  font-weight: bold;
+  font-size: 3rem;
 }
 
 .voltar {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    transition: transform 0.2s ease-in-out;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  transition: transform 0.2s ease-in-out;
 }
 
 .voltar a {
-    text-decoration: none;
-    color: var(--gin);
-    font-size: 15px;
-    background-color: rgba(0, 0, 0, 0.414);
-    padding: 10px;
-    border-radius: 10px;
-    display: inline-block;
+  text-decoration: none;
+  color: var(--gin);
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0.414);
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
 .voltar a:hover {
-    background-color: var(--spanish-green);
-    transform: scale(1.1);
+  background-color: var(--spanish-green);
+  transform: scale(1.1);
 }
-  
-  .index {
-    flex-direction: column;
-  }
 
-  .index a{
-    min-width: 210px;
-  }
-  
-  body {
+.index {
+  flex-direction: column;
+}
+
+.index a {
+  min-width: 210px;
+}
+
+body {
   background-color: var(--english-holly);
   display: flex;
   justify-content: center; /* Garante a centralização do conteúdo */
@@ -64,7 +67,7 @@ h1 {
   min-height: 100vh; /* Permite que o conteúdo ocupe toda a altura da tela */
   flex-direction: column;
   padding: 20px; /* Adiciona espaçamento ao redor */
-  }
+}
 
 ul {
   display: flex;
@@ -72,7 +75,7 @@ ul {
   justify-content: center; /* Garante que os itens da lista sejam centralizados horizontalmente */
   align-items: center;
   gap: 15px;
-  padding:25px;
+  padding: 25px;
   border-radius: 10px;
   background-color: var(--dark-green);
   list-style: none;
@@ -80,7 +83,7 @@ ul {
 
   max-width: 100%; /* Garante que a lista ocupe toda a largura disponível */
   width: auto;
-  margin: 0 auto; 
+  margin: 0 auto;
   margin-top: 20px; /* Espaçamento acima da lista */
 }
 
@@ -105,26 +108,26 @@ a:hover {
 
 @media (max-width: 768px) {
   ul {
-      flex-direction: column !important; /* Organiza os itens verticalmente em telas menores */
-      width: 90%; /* Limita a largura da lista */
-      margin: 0 auto; /* Centraliza a lista */
+    flex-direction: column !important; /* Organiza os itens verticalmente em telas menores */
+    width: 90%; /* Limita a largura da lista */
+    margin: 0 auto; /* Centraliza a lista */
   }
 
   a {
-      min-width: 250px; /* Largura mínima ajustada para os links */
-      font-size: 1.5rem; /* Ajusta o tamanho da fonte */
-      padding: 8px 16px; /* Ajusta o padding para responsividade */
+    min-width: 250px; /* Largura mínima ajustada para os links */
+    font-size: 1.5rem; /* Ajusta o tamanho da fonte */
+    padding: 8px 16px; /* Ajusta o padding para responsividade */
   }
 }
 
 @media (max-width: 600px) {
   ul {
-      flex-direction: column !important; /* Em telas muito pequenas, organiza os itens verticalmente */
-      width: 90%; /* Limita a largura */
-      margin: 0 auto; /* Centraliza a lista */
+    flex-direction: column !important; /* Em telas muito pequenas, organiza os itens verticalmente */
+    width: 90%; /* Limita a largura */
+    margin: 0 auto; /* Centraliza a lista */
   }
 
   a {
-      min-width: 250px; 
+    min-width: 250px;
   }
 }

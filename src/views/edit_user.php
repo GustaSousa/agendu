@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
         <input type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
         <input type="text" name="department" placeholder="Setor" value="<?php echo htmlspecialchars($user['department']); ?>" required>
         <label class="checkbox-label">
-            <input type="checkbox" name="is_admin"> 
+            <input type="checkbox" name="is_admin">
             <span>Administrador</span>
         </label>
         <button type="submit">Atualizar</button>

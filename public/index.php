@@ -16,6 +16,7 @@ require_once(__DIR__ . '/../src/config/config.php'); // Inclui apenas depois da 
     <meta charset="UTF-8">
     <title>Agendu - Home</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <h1>Agendu</h1>

@@ -5,4 +5,3 @@ session_destroy(); // Destroi a sessão
 
 header("Location: /src/views/login.php");
 exit;
-?>

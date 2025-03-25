@@ -13,10 +13,11 @@ Agendu é um sistema web para agendamento de ambientes na Unoeste Guarujá (Univ
 ✔️ Redirecionamento automático para usuários logados
 
 ## 🛠 Tecnologias utilizadas
-	•	Backend: PHP + SQLite
-	•	Frontend: HTML, CSS (básico)
-	•	Servidor: PHP embutido (php -S localhost:8080) ou Apache
-	•	Gerenciamento de dependências: Nenhum (por enquanto)
+
+    •	Backend: PHP + SQLite
+    •	Frontend: HTML, CSS (básico)
+    •	Servidor: PHP embutido (php -S localhost:8080) ou Apache
+    •	Gerenciamento de dependências: Nenhum (por enquanto)
 
 ## 🚀 Como rodar o projeto?
 
@@ -28,26 +29,27 @@ Agendu é um sistema web para agendamento de ambientes na Unoeste Guarujá (Univ
 
 ### 2️⃣ Inicie o servidor PHP (caso esteja usando o servidor embutido do PHP)
 
-> ``php -S localhost:8080 -t public``
+> `php -S localhost:8080 -t public`
 
 ### 3️⃣ Acesse no navegador:
 
-> ``http://localhost:8080``
+> `http://localhost:8080`
 
 📂 Estrutura do projeto
 
 /agendu
 
-│── /public           # Arquivos acessíveis pelo navegador (index.php, login.php, etc.)  
-│── /src              # Código principal (dashboard.php, schedule.php, etc.)  
-│── /config           # Configurações (config.php)  
-│── /database         # Banco de dados SQLite (agendu.sqlite)  
-│── README.md         # Documentação do projeto
+│── /public # Arquivos acessíveis pelo navegador (index.php, login.php, etc.)  
+│── /src # Código principal (dashboard.php, schedule.php, etc.)  
+│── /config # Configurações (config.php)  
+│── /database # Banco de dados SQLite (agendu.sqlite)  
+│── README.md # Documentação do projeto
 
 ## 🔑 Acesso e permissões
-	•	Qualquer pessoa pode se registrar e criar um usuário.
-	•	Somente administradores podem editar/excluir agendamentos e gerenciar usuários.
-	•	Se um usuário não estiver logado, ele será redirecionado automaticamente para a página de login.
+
+    •	Qualquer pessoa pode se registrar e criar um usuário.
+    •	Somente administradores podem editar/excluir agendamentos e gerenciar usuários.
+    •	Se um usuário não estiver logado, ele será redirecionado automaticamente para a página de login.
 
 ## 📌 Próximos passos (ideias de melhorias)
 

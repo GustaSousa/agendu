@@ -25,12 +25,15 @@ try {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Agendamentos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/assets/css/lists.css">
+    <script src="/public/assets/js/filter.js"></script>
 </head>
+
 <body>
     <div class="voltar">
         <a href="/src/views/dashboard.php">Voltar</a>
@@ -39,11 +42,11 @@ try {
     <h1>Agendamentos</h1>
 
     <div class="sql_ambientes">
-        <a href="/src/views/schedule_list.php">Todos</a>
-        <a href="/src/views/schedule_list.php">Auditórios</a>
-        <a href="/src/views/schedule_list.php">Salas</a>
-        <a href="/src/views/schedule_list.php">TICs</a>
-        <a href="/src/views/schedule_list.php">Outros</a>
+        <a href="#" data-filter="all">Todos</a>
+        <a href="#" data-filter="Auditórios">Auditórios</a>
+        <a href="#" data-filter="Salas">Salas</a>
+        <a href="#" data-filter="TICs">TICs</a>
+        <a href="#" data-filter="Outros">Outros</a>
     </div>
 
     <div class="table-container">
@@ -56,6 +59,7 @@ try {
                     <th>Data</th>
                     <th>Hora de Início</th>
                     <th>Hora de Término</th>
+                    <th>Número de Participantes</th>
                     <th>Responsável</th>
                     <th>Contato</th>
                     <th>Audiovisual</th>
@@ -78,6 +82,7 @@ try {
                         <td><?php echo htmlspecialchars($agendamento['date']); ?></td>
                         <td><?php echo htmlspecialchars($agendamento['start_time']); ?></td>
                         <td><?php echo htmlspecialchars($agendamento['end_time']); ?></td>
+                        <td><?php echo htmlspecialchars($agendamento['participants_count']); ?></td>
                         <td><?php echo htmlspecialchars($agendamento['responsible_person']); ?></td>
                         <td><?php echo htmlspecialchars($agendamento['contact_info']); ?></td>
                         <td><?php echo htmlspecialchars($agendamento['av_requirements']); ?></td>
@@ -98,4 +103,5 @@ try {
         </table>
     </div>
 </body>
+
 </html>

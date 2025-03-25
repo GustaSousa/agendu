@@ -4,8 +4,15 @@ session_start();
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION["user_id"])) {
-    die("Acesso negado. Faça <a href='login.php'>login</a>.");
+    //die("Acesso negado. Faça <a href='login.php'>login</a>.");
+    echo "<script>
+        window.alert('Acesso negado. Faça login');
+        setTimeout(function() {
+            window.location.href = 'login.php';
+        }, 0);
+    </script>";
 }
+
 
 $username = $_SESSION["username"];
 $is_admin = $_SESSION["is_admin"];
